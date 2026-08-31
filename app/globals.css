@@ -1,0 +1,87 @@
+:root {
+  --slate: #1e2a32;
+  --slate-soft: #3a4a54;
+  --paper: #dce3df;
+  --paper-deep: #c5d0cb;
+  --wax: #7a1f2b;
+  --wax-light: #a8323f;
+  --ink-line: #4a6a78;
+  --seal-gold: #c4a35a;
+  --ok: #1f6b4a;
+  --bad: #7a1f2b;
+  --panel: rgba(220, 227, 223, 0.94);
+  --line: rgba(30, 42, 50, 0.14);
+  --shadow: 0 16px 36px rgba(30, 42, 50, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--slate);
+  background:
+    radial-gradient(circle at 85% 8%, rgba(122, 31, 43, 0.12), transparent 40%),
+    radial-gradient(circle at 8% 90%, rgba(74, 106, 120, 0.18), transparent 45%),
+    linear-gradient(160deg, #e8eeea 0%, #b7c4bf 55%, #8fa3a0 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 27px,
+    rgba(74, 106, 120, 0.09) 27px,
+    rgba(74, 106, 120, 0.09) 28px
+  );
+  z-index: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes seal-press {
+  0%,
+  100% {
+    transform: scale(1) rotate(-6deg);
+  }
+  50% {
+    transform: scale(1.04) rotate(-4deg);
+  }
+}
+
+@keyframes ink-draw {
+  from {
+    stroke-dashoffset: 120;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
